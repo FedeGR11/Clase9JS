@@ -13,14 +13,26 @@ h1 {
   margin-bottom: 25px;
 }
 
-/* Botenes e inputs */
+/* Botones e inputs */
 .controles {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 15px;
+  gap: 12px;
+  margin-bottom: 20px;
 }
 
+.fila-controles {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: stretch;
+}
+
+#btn-vaciar {
+  width: auto !important;
+  align-self: flex-start;  
+}
 
 input {
   padding: 10px 12px;
@@ -94,8 +106,9 @@ input:focus {
   margin: 0 0 15px 0;
 }
 
-/* Botón eliminar */
-.btn-eliminar {
+/* Botón eliminar y botón vaciar */
+.btn-eliminar,
+.btn-vaciar {
   padding: 8px;
   background-color: #e74c3c;
   color: white;
@@ -106,19 +119,40 @@ input:focus {
   transition: background-color 0.2s;
 }
 
-.btn-eliminar:hover {
+.btn-eliminar:hover,
+.btn-vaciar:hover {
   background-color: #c0392b;
+}
+
+.btn-editar {
+  padding: 8px;
+  margin-bottom: 8px;
+  background-color: #3265d3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: background-color 0.2s;
+}
+
+.btn-editar:hover {
+  background-color: #3265d3;
 }
 
 /* Color de mensajes */
 .mensaje-exito {
+  margin-top: 10px;
   color: #2ecc71;
 }
 
 .mensaje-error {
   color: #e74c3c;
+  margin-top: 10px;
+
 }
 
 .mensaje-alerta {
   color: #e67e22;
+  margin-top: 10px;
 }
