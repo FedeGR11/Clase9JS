@@ -46,14 +46,20 @@ function actualizarVista() {
 }
 
 setTimeout(() => {
-    console.log("Recordatorio: revisá los precios actualizados antes de cerrar la sesión.");
-}, 5000);
+    Toastify({
+        text: "🔔 Sistema de inventario cargado correctamente. Datos sincronizados.",
+        duration: 4000,
+        gravity: "bottom",
+        position: "left",
+        style: { background: "#17a2b8" }
+    }).showToast();
+}, 3000);
 
 function obtenerProductosAsync() {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             const guardados = JSON.parse(localStorage.getItem("productosJS")) ?? productos;
-            if (guardados && guardados.length >= 0) {
+            if (guardados && guardados.length > 0) {
                 resolve(guardados);
             } else {
                 reject(new Error("No se pudieron cargar los datos del inventario."));
